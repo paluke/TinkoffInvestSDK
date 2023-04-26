@@ -66,4 +66,8 @@ target_link_libraries(${PROJECT_NAME}
     ${_PROTOBUF_LIBPROTOBUF}
     )
 
+if(WIN32)
+  target_link_libraries(${PROJECT_NAME} PRIVATE wsock32 ws2_32)
+endif()
+
 add_subdirectory(samples)
