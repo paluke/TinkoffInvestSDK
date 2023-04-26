@@ -28,7 +28,7 @@ protected:
     const std::string m_token;
     CompletionQueue m_cq;
     std::unique_ptr<std::thread> m_grpcThread;
-    std::shared_ptr<ClientContext> makeContext();
+    std::unique_ptr<ClientContext> makeContext();
     void StartThread();
 
 };
