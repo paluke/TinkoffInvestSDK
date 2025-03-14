@@ -28,7 +28,7 @@ public:
     /// Закрытие счёта в песочнице
     ServiceReply CloseSandboxAccount(const std::string &accountId);
     /// Выставление торгового поручения в песочнице
-    ServiceReply PostSandboxOrder(const std::string &figi, int64_t quantity, int64_t units, int32_t nano);
+    ServiceReply PostSandboxOrder(const std::string &figi, int64_t quantity, int64_t units, int32_t nano, OrderDirection direction, const std::string &accountId, OrderType orderType, const std::string &orderId);
     /// Получение списка активных заявок по счёту в песочнице
     ServiceReply GetSandboxOrders(const std::string &accountId);
     /// Отмена торгового поручения в песочнице
@@ -40,7 +40,7 @@ public:
     /// Получение операций в песочнице по номеру счёта
     ServiceReply GetSandboxOperations(const std::string  &accountId, int64_t fromseconds, int32_t fromnanos, int64_t toseconds, int32_t tonanos);
     /// Получение портфолио в песочнице
-    ServiceReply GetSandboxPortfolio(const std::string  &accountId);
+    ServiceReply GetSandboxPortfolio(const std::string  &accountId, PortfolioRequest_CurrencyRequest currency);
     /// Пополнение счёта в песочнице
     ServiceReply SandboxPayIn(const std::string &accountId, const std::string  &currency, int64_t units, int32_t nano);
 
